@@ -64,6 +64,6 @@ extension NowPlayController: NowPlayView {
 extension NowPlayController: NetworkScreenControllerDelegate {
     func didClickTypeAgain() {
         hideNetworkErrorScreen()
-        
+        presenter.getNowPlaying(1)
     }
 }

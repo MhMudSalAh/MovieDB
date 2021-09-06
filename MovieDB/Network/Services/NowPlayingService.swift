@@ -12,8 +12,8 @@ extension Api {
     enum Movies: ServiceProtocol {
         
         case nowPlaying(_ page: Int)
-        case topRated
-        case details
+        case topRated(_ page: Int)
+        case details(_ movieId: Int)
         
         var path: String {
             switch self {
@@ -21,8 +21,8 @@ extension Api {
                 return API.SERVICE_MOVIES_NOWPLAYING
             case .topRated:
                 return API.SERVICE_MOVIES_TOP_RATED
-            case .details:
-                return API.SERVICE_MOVIES_DETAILS
+            case let .details(movieId):
+                return "\(API.SERVICE_MOVIES_DETAILS)\(movieId)"
             }
         }
         
@@ -40,9 +40,9 @@ extension Api {
         var parameters: [String : Any]? {
             switch self {
             case let .nowPlaying(page):
-                return ["page" : page]
-            case .topRated:
-                return nil
+                return ["page": page]
+            case let .topRated(page):
+                return ["page": page]
             case .details:
                 return nil
             }

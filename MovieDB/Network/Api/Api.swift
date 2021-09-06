@@ -58,7 +58,7 @@ final class Api {
     
     let SERVICE_MOVIES_NOWPLAYING = "movie/now_playing"
     let SERVICE_MOVIES_TOP_RATED = "movie/top_rated"
-    let SERVICE_MOVIES_DETAILS = "v1/user/password/create"
+    let SERVICE_MOVIES_DETAILS = "movie/"
 
 }
 

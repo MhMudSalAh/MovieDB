@@ -17,6 +17,10 @@
 		7A518ABF26E547FC00AAC1DD /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A518ABD26E547FC00AAC1DD /* MovieCell.swift */; };
 		7A518AC026E547FC00AAC1DD /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A518ABE26E547FC00AAC1DD /* MovieCell.xib */; };
 		7A518AC226E55EDE00AAC1DD /* NowPlaying+Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A518AC126E55EDE00AAC1DD /* NowPlaying+Pagination.swift */; };
+		7A6B232E26E59A1E0055D907 /* TopRated+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B232D26E59A1E0055D907 /* TopRated+TableView.swift */; };
+		7A6B233726E59B720055D907 /* TopRatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B233526E59B720055D907 /* TopRatedCell.swift */; };
+		7A6B233826E59B720055D907 /* TopRatedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6B233626E59B720055D907 /* TopRatedCell.xib */; };
+		7A6B233A26E59BE00055D907 /* TopRated+Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B233926E59BE00055D907 /* TopRated+Pagination.swift */; };
 		7AB6199B26E4BF330004B2A2 /* FooterCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6194626E4BF330004B2A2 /* FooterCollection.xib */; };
 		7AB6199C26E4BF330004B2A2 /* FooterCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6194726E4BF330004B2A2 /* FooterCollection.swift */; };
 		7AB6199D26E4BF330004B2A2 /* PickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6194926E4BF330004B2A2 /* PickerController.xib */; };
@@ -180,6 +184,10 @@
 		7A518ABD26E547FC00AAC1DD /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		7A518ABE26E547FC00AAC1DD /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		7A518AC126E55EDE00AAC1DD /* NowPlaying+Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NowPlaying+Pagination.swift"; sourceTree = "<group>"; };
+		7A6B232D26E59A1E0055D907 /* TopRated+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopRated+TableView.swift"; sourceTree = "<group>"; };
+		7A6B233526E59B720055D907 /* TopRatedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedCell.swift; sourceTree = "<group>"; };
+		7A6B233626E59B720055D907 /* TopRatedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopRatedCell.xib; sourceTree = "<group>"; };
+		7A6B233926E59BE00055D907 /* TopRated+Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopRated+Pagination.swift"; sourceTree = "<group>"; };
 		7AB6194626E4BF330004B2A2 /* FooterCollection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterCollection.xib; sourceTree = "<group>"; };
 		7AB6194726E4BF330004B2A2 /* FooterCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterCollection.swift; sourceTree = "<group>"; };
 		7AB6194926E4BF330004B2A2 /* PickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerController.xib; sourceTree = "<group>"; };
@@ -397,6 +405,23 @@
 				7A518ABE26E547FC00AAC1DD /* MovieCell.xib */,
 			);
 			path = MovieCell;
+			sourceTree = "<group>";
+		};
+		7A6B232F26E59A390055D907 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7A6B233026E59A550055D907 /* TopRatedCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7A6B233026E59A550055D907 /* TopRatedCell */ = {
+			isa = PBXGroup;
+			children = (
+				7A6B233526E59B720055D907 /* TopRatedCell.swift */,
+				7A6B233626E59B720055D907 /* TopRatedCell.xib */,
+			);
+			path = TopRatedCell;
 			sourceTree = "<group>";
 		};
 		7AB6194026E4BDE40004B2A2 /* Local */ = {
@@ -1199,8 +1224,11 @@
 		7AB61AF126E4CCE40004B2A2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7AB61B1C26E4CF510004B2A2 /* TopRatedController.swift */,
+				7A6B232F26E59A390055D907 /* Cells */,
 				7AB61B1E26E4CF5B0004B2A2 /* TopRated.storyboard */,
+				7A6B233926E59BE00055D907 /* TopRated+Pagination.swift */,
+				7A6B232D26E59A1E0055D907 /* TopRated+TableView.swift */,
+				7AB61B1C26E4CF510004B2A2 /* TopRatedController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1578,6 +1606,7 @@
 				7AB619A226E4BF330004B2A2 /* EmptyScreenController.xib in Resources */,
 				7AB619F426E4BF8C0004B2A2 /* DIN-Regular.ttf in Resources */,
 				7AB619F226E4BF8C0004B2A2 /* DIN-UltraLight.ttf in Resources */,
+				7A6B233826E59B720055D907 /* TopRatedCell.xib in Resources */,
 				7AB619F326E4BF8C0004B2A2 /* DIN-Light.ttf in Resources */,
 				7AB619F026E4BF8C0004B2A2 /* DIN-Bold.ttf in Resources */,
 				7AB619A426E4BF330004B2A2 /* NetworkScreenController.xib in Resources */,
@@ -1723,6 +1752,7 @@
 				7AB619A326E4BF330004B2A2 /* EmptyScreenController.swift in Sources */,
 				7AB61AC426E4C16D0004B2A2 /* Base+Navigation.swift in Sources */,
 				7AB61B1526E4CF230004B2A2 /* TopRatedContract.swift in Sources */,
+				7A6B233726E59B720055D907 /* TopRatedCell.swift in Sources */,
 				7AB619B026E4BF340004B2A2 /* UIView+MotionEffect.swift in Sources */,
 				7AB619FF26E4BFE80004B2A2 /* CachingManager.swift in Sources */,
 				7AB61A8E26E4C04A0004B2A2 /* Fail.swift in Sources */,
@@ -1757,6 +1787,7 @@
 				7AB619A026E4BF330004B2A2 /* RangeSliderTrackLayer.swift in Sources */,
 				7AB619B626E4BF340004B2A2 /* UIFont+Extension.swift in Sources */,
 				7AB619C826E4BF340004B2A2 /* Date+TimeAgo.swift in Sources */,
+				7A6B233A26E59BE00055D907 /* TopRated+Pagination.swift in Sources */,
 				7AB619B926E4BF340004B2A2 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				7AB61B1926E4CF3A0004B2A2 /* TopRatedPresenter.swift in Sources */,
 				7A518AB626E511F500AAC1DD /* Movie.swift in Sources */,
@@ -1800,6 +1831,7 @@
 				7AB61A5A26E4C0490004B2A2 /* URLSessionContract.swift in Sources */,
 				7AB61AC726E4C16D0004B2A2 /* SplashContract.swift in Sources */,
 				7AB61A8926E4C0490004B2A2 /* APIHeader.swift in Sources */,
+				7A6B232E26E59A1E0055D907 /* TopRated+TableView.swift in Sources */,
 				7AB619B426E4BF340004B2A2 /* UIView+AnimateBackgroundColor.swift in Sources */,
 				7AB619A626E4BF330004B2A2 /* UIImage+Extension.swift in Sources */,
 				7AB619AA26E4BF340004B2A2 /* LoadingButton.swift in Sources */,
