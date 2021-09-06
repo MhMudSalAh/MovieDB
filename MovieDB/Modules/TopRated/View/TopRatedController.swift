@@ -6,10 +6,20 @@
 //
 
 import UIKit
+import SkeletonView
 
 class TopRatedController: BaseController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var presenter: TopRatedPresenterInterface!
+    var page: Paginate = Paginate()
+    
+    var topRated: [Movie] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +28,8 @@ class TopRatedController: BaseController {
     
     func setupView() {
         setupNavigationTitle()
+        initTableView()
+        presenter.getTopRated(1)
     }
     
     func setupNavigationTitle() {
@@ -27,4 +39,35 @@ class TopRatedController: BaseController {
 
 extension TopRatedController: TopRatedView {
     
+    func showLoading() {
+        DispatchQueue.main.async {
+            self.view.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    func hideLoading() {
+        endRefresherTable()
+        view.hideSkeleton()
+    }
+        
+    func endIndicator() {
+        hideActivityIndicator()
+        tableView.tableFooterView = nil
+        tableView.tableFooterView?.isHidden = true
+    }
+    
+    func presentNetworkErrorScreen() {
+        showNetworkErrorScreen(self, self.view)
+    }
+    
+    func hideNetworkErrorScreen() {
+        closeNetworkErrorScreen()
+    }
+}
+
+extension TopRatedController: NetworkScreenControllerDelegate {
+    func didClickTypeAgain() {
+        hideNetworkErrorScreen()
+        presenter.getTopRated(1)
+    }
 }

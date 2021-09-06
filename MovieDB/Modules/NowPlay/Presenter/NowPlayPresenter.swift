@@ -25,13 +25,12 @@ extension NowPlayPresenter: NowPlayInteractorOutput {
 
     func didGetNowPlaying(_ page: Page<[Movie]>) {
         DispatchQueue.main.async { [self] in
-            view?.hideLoading()
-            view?.hideNetworkErrorScreen()
             view?.page.current = page.current ?? 1
             view?.page.last = page.totalPage ?? 1
+            view?.hideNetworkErrorScreen()
+            view?.hideLoading()
             if page.current == 1 {
-                let data = page.data ?? []
-                view?.nowPlaying = data
+                view?.nowPlaying = page.data ?? []
             } else {
                 view?.nowPlaying.append(contentsOf: page.data ?? [])
             }
@@ -48,11 +47,10 @@ extension NowPlayPresenter: NowPlayInteractorOutput {
     func checkError(_ error: APIError) {
         view?.hideLoading()
         switch error.type {
-        case .network, .server, .parsing:
+        case .network:
             view?.presentNetworkErrorScreen()
         default:
-            //MARK TO DO
-            break
+            view?.presentNetworkErrorScreen()
         }
     }
 }

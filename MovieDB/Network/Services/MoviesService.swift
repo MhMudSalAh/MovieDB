@@ -1,8 +1,8 @@
 //
-//  NowPlayingService.swift
+//  MoviesService.swift
 //  MovieDB
 //
-//  Created by MhMuD SalAh on 05/09/2021.
+//  Created by MhMuD SalAh on 06/09/2021.
 //
 
 import Foundation
@@ -12,8 +12,9 @@ extension Api {
     enum Movies: ServiceProtocol {
         
         case nowPlaying(_ page: Int)
-        case topRated
-        case details
+        case topRated(_ page: Int)
+        case details(_ movieId: Int)
+        case search(_ page: Int, _ text: String)
         
         var path: String {
             switch self {
@@ -21,8 +22,10 @@ extension Api {
                 return API.SERVICE_MOVIES_NOWPLAYING
             case .topRated:
                 return API.SERVICE_MOVIES_TOP_RATED
-            case .details:
-                return API.SERVICE_MOVIES_DETAILS
+            case let .details(movieId):
+                return "\(API.SERVICE_MOVIES_DETAILS)\(movieId)"
+            case .search:
+                return API.SERVICE_MOVIES_SEARCH
             }
         }
         
@@ -31,20 +34,24 @@ extension Api {
             case .nowPlaying:
                 return .GET
             case .topRated:
-                return .POST
+                return .GET
             case .details:
-                return .POST
+                return .GET
+            case .search:
+                return .GET
             }
         }
         
         var parameters: [String : Any]? {
             switch self {
             case let .nowPlaying(page):
-                return ["page" : page]
-            case .topRated:
-                return nil
+                return ["page": page]
+            case let .topRated(page):
+                return ["page": page]
             case .details:
                 return nil
+            case let .search(page, text):
+                return ["page": page, "query": text]
             }
         }
         
@@ -56,6 +63,8 @@ extension Api {
                 return nil
             case .details:
                 return nil
+            case .search:
+                return nil
             }
         }
         
@@ -66,6 +75,8 @@ extension Api {
             case .topRated:
                 return nil
             case .details:
+                return nil
+            case .search:
                 return nil
             }
         }

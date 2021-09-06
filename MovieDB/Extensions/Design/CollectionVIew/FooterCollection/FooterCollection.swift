@@ -9,7 +9,7 @@ import UIKit
 
 class FooterCollection: UICollectionReusableView {
     
-    @IBOutlet weak var refreshControlIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var view: UIView!
     
     var isAnimatingFinal:Bool = false
@@ -29,36 +29,33 @@ class FooterCollection: UICollectionReusableView {
             return
         }
         currentTransform = inTransform
-        refreshControlIndicator?.transform = CGAffineTransform.init(scaleX: scaleFactor, y: scaleFactor)
+        indicator?.transform = CGAffineTransform.init(scaleX: scaleFactor, y: scaleFactor)
     }
     
-    //reset the animation
     func prepareInitialAnimation() {
         isAnimatingFinal = false
-        refreshControlIndicator?.stopAnimating()
-        //.refreshControlIndicator?.transform = CGAffineTransform.init(scaleX: 0.0, y: 0.0)
+        indicator?.stopAnimating()
     }
     
     func startAnimate() {
         view.isHidden = true
         isAnimatingFinal = true
-        refreshControlIndicator?.startAnimating()
+        indicator?.startAnimating()
     }
     
     func stopAnimate() {
         isAnimatingFinal = false
-        refreshControlIndicator?.stopAnimating()
+        indicator?.stopAnimating()
         view.isHidden = false
     }
     
-    //final animation to display loading
     func animateFinal() {
         if isAnimatingFinal {
             return
         }
         self.isAnimatingFinal = true
         UIView.animate(withDuration: 0.2) {
-            self.refreshControlIndicator?.transform = CGAffineTransform.identity
+            self.indicator?.transform = CGAffineTransform.identity
         }
     }
 }

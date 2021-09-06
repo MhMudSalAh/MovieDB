@@ -42,44 +42,6 @@ class UsersRepository: Repo {
         }
     }
     
-    
-    func logOut(_ completion: @escaping (Response<AnyCodable>) -> ()) {
-        provider.request(type: AnyCodable.self, service: Api.Users.logout) { response in
-            DispatchQueue.main.async {
-                self.token.delete()
-                self.local.logOut()
-            }
-            switch response {
-            case let .success(any):
-                completion(.onSuccess(any))
-                break
-            case let .failure(error):
-                completion(.onFailure(error))
-                break
-            case .complete:
-                completion(.onCompleted)
-                break
-            }
-        }
-    }
-    
-    func resetPassword(_ email: String, _ completion: @escaping (Response<AnyCodable>) -> ()) {
-        provider.request(type: AnyCodable.self, service: Api.Users.resetPassword(email)) { response in
-            switch response {
-            case let .success(any):
-                self.local.logOut()
-                completion(.onSuccess(any))
-                break
-            case let .failure(error):
-                completion(.onFailure(error))
-                break
-            case .complete:
-                completion(.onCompleted)
-                break
-            }
-        }
-    }
-        
     func isExist() -> Bool {
         return token.isExist()
     }

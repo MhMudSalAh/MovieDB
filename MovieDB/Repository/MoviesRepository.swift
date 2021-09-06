@@ -26,5 +26,49 @@ class MoviesRepository: Repo {
             }
         }
     }
+    
+    func topRated(_ page: Int, _ completion: @escaping (Response<Page<[Movie]>>) -> ()) {
+        provider.request(type: Page<[Movie]>.self, service: Api.Movies.topRated(page)) { response in
+            switch response {
+            case let .success(page):
+                completion(.onSuccess(page))
+            case let .failure(error):
+                completion(.onFailure(error))
+            case .complete:
+                completion(.onCompleted)
+                break
+            }
+        }
+    }
+    
+    func details(_ movieId: Int, _ completion: @escaping (Response<Movie>) -> ()) {
+        provider.request(type: Movie.self, service: Api.Movies.details(movieId)) { response in
+            switch response {
+            case let .success(page):
+                completion(.onSuccess(page))
+            case let .failure(error):
+                completion(.onFailure(error))
+            case .complete:
+                completion(.onCompleted)
+                break
+            }
+        }
+    }
+    
+    func search(_ page: Int, _ text: String, _ completion: @escaping (Response<Page<[Movie]>>) -> ()) {
+        provider.request(type: Page<[Movie]>.self, service: Api.Movies.search(page, text)) { response in
+            switch response {
+            case let .success(page):
+                completion(.onSuccess(page))
+                break
+            case let .failure(error):
+                completion(.onFailure(error))
+                break
+            case .complete:
+                completion(.onCompleted)
+                break
+            }
+        }
+    }
 }
 
