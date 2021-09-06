@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  MovieDB
+
+  Created by MhMuD SalAh on 05/09/2021.
+*/
+
+"app_name" = "MovieDB";
+"something_went_wrong" = "Something went wrong!";
+"home" = "Home";
+"now-playing" = "Now Playing";
+"top-rated" = "Top Rated";
+"no_internet_connection" = "No internet connection!";
+"success" = "Success!";
+"error" = "Error!";
+"error_description" = "Something went wrong. Please check your connection and try again";
+"try_again" = "Try again";
