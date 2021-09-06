@@ -1,14 +1,14 @@
 //
-//  NowPlaying+CollectionView.swift
+//  Search+CollectionView.swift
 //  MovieDB
 //
-//  Created by MhMuD SalAh on 05/09/2021.
+//  Created by MhMuD SalAh on 06/09/2021.
 //
 
 import UIKit
 import SkeletonView
 
-extension NowPlayController: UICollectionViewDelegate, SkeletonCollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SearchController: UICollectionViewDelegate, SkeletonCollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func initCollectionView() {
         collectionView.initialize(cellClass: MovieCell.self, delegate: self, dataSource: self, refreshControl: refreshCollection)
@@ -20,7 +20,7 @@ extension NowPlayController: UICollectionViewDelegate, SkeletonCollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return nowPlaying.count
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -41,7 +41,7 @@ extension NowPlayController: UICollectionViewDelegate, SkeletonCollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeue(cellClass: MovieCell.self, indexPath: indexPath)
         cell.hideSkeleton()
-        cell.setupCell(nowPlaying[indexPath.row])
+        cell.setupCell(movies[indexPath.row])
         return cell
     }
     

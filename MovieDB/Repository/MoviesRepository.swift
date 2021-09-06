@@ -54,5 +54,21 @@ class MoviesRepository: Repo {
             }
         }
     }
+    
+    func search(_ page: Int, _ text: String, _ completion: @escaping (Response<Page<[Movie]>>) -> ()) {
+        provider.request(type: Page<[Movie]>.self, service: Api.Movies.search(page, text)) { response in
+            switch response {
+            case let .success(page):
+                completion(.onSuccess(page))
+                break
+            case let .failure(error):
+                completion(.onFailure(error))
+                break
+            case .complete:
+                completion(.onCompleted)
+                break
+            }
+        }
+    }
 }
 

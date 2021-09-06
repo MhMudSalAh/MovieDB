@@ -15,3 +15,8 @@
 "error" = "حدث خطأ!";
 "error_description" = "حدث خطأ، من فضلك أفحص اتصالك بالأنترنت، وحاول مرةأخرى";
 "try_again" = "حاول مرة اخرى";
+"search" = "البحث";
+"search_title" = "البحث عن فيلم...";
+"empty_search_title" = "لا توجد أفلام!";
+"empty_search_description" = "يرجى البحث مرة أخرى";
+"search_here" = "ابحث هنا...";

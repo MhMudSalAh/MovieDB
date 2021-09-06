@@ -47,11 +47,10 @@ extension NowPlayPresenter: NowPlayInteractorOutput {
     func checkError(_ error: APIError) {
         view?.hideLoading()
         switch error.type {
-        case .network, .server, .parsing:
+        case .network:
             view?.presentNetworkErrorScreen()
         default:
-            //MARK TO DO
-            break
+            view?.presentNetworkErrorScreen()
         }
     }
 }
