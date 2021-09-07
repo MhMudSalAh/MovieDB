@@ -2,7 +2,7 @@
 
 ### Overview:
 iOS Swift Application using VIPER Architecture.
-This is a simple design application for authentication using VIPER architecture and CoreData, I prefer using Delegate Protocols rather than Third Party Library such as Rx but at this project I make it as an example on how to using VIPER with Rx.The application also support localization.
+This is a simple design application for authentication using VIPER architecture and CoreData, I prefer using Delegate Protocols rather than Third Party Library such as Rx but at this project I make it as an example on how to using VIPER.The application also support localization.
 
 ### VIPER
 VIPER is an application of Clean Architecture. The word VIPER is a backronym for View, Interactor, Presenter, Entity, and Routing (And I use another component called Contrcat). Clean Architecture divides an app’s logical structure into distinct layers of responsibility. This makes it easier to isolate dependencies (e.g. your database) and to test the interactions at the boundaries between layers.
