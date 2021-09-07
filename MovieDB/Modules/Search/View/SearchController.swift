@@ -41,21 +41,29 @@ class SearchController: BaseController {
         setupView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        searchController.hidesNavigationBarDuringPresentation = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        searchController.hidesNavigationBarDuringPresentation = true
+    }
+    
     func setupView() {
-        setupNavigationTitle()
+        setupNavigation()
         setupSearhController()
         initCollectionView()
         presentSeacrhScreen()
     }
     
-    func setupNavigationTitle() {
+    func setupNavigation() {
         DispatchQueue.main.async { [self] in
             navigationItem.title = localizedText("search")
             self.navigationItem.hidesSearchBarWhenScrolling = false
             searchController.definesPresentationContext = true
         }
     }
-            
+    
     func reloadCollection() {
         DispatchQueue.main.async { [self] in
             if movies.isEmpty && (searchController.searchBar.text?.isEmpty ?? true) {

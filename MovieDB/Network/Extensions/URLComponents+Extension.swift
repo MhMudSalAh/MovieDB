@@ -3,8 +3,7 @@
 //  Network Layer
 //
 //  Created by MhMuD SalAh on 10/16/19.
-//  Copyright © 2019 Tarseya. All rights reserved.
-//
+//  
 
 import Foundation
 
@@ -16,10 +15,10 @@ extension URLComponents {
         let url = baseUrl!.appendingPathComponent(service.path)
         
         self.init(url: url, resolvingAgainstBaseURL: false)!
-        //
-        //        /// Set the spasific guery params which assigned by routes
+
+        /// Set the spasific guery params which assigned by routes
         
-        var parameters = service.parameters ?? [:] //{
+        var parameters = service.parameters ?? [:]
         parameters.updateValue(LOCAL.getLanguage(), forKey: APIHeader.language.rawValue)
         parameters.updateValue(APIHeader.apiValue.rawValue, forKey: APIHeader.apiKey.rawValue)
         queryItems = parameters.map { key, value in
