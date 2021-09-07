@@ -35,9 +35,56 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIp-hO-Ims">
+                                                <rect key="frame" x="148" y="5" width="34" height="34"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrr-ne-sAA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                                        <state key="normal" image="favoriteOn"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="actionFavorite:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Mng-Kd-YiK"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="34" id="6bJ-mV-eNK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Hrr-ne-sAA" secondAttribute="trailing" id="HII-B7-jYe"/>
+                                                    <constraint firstItem="Hrr-ne-sAA" firstAttribute="leading" secondItem="aIp-hO-Ims" secondAttribute="leading" id="NSc-Ys-uyh"/>
+                                                    <constraint firstItem="Hrr-ne-sAA" firstAttribute="top" secondItem="aIp-hO-Ims" secondAttribute="top" id="deQ-zT-NQL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Hrr-ne-sAA" secondAttribute="bottom" id="jm5-Oo-YP8"/>
+                                                    <constraint firstAttribute="height" constant="34" id="za0-7v-NmT"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="17"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.40000000000000002"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.20000000000000001" height="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="aIp-hO-Ims" secondAttribute="trailing" constant="5" id="5oV-4T-whE"/>
                                             <constraint firstItem="bKY-LK-gpA" firstAttribute="top" secondItem="7QG-lW-lNp" secondAttribute="top" id="DCE-If-1OV"/>
+                                            <constraint firstItem="aIp-hO-Ims" firstAttribute="top" secondItem="7QG-lW-lNp" secondAttribute="top" constant="5" id="Pd8-UU-QkP"/>
                                             <constraint firstItem="bKY-LK-gpA" firstAttribute="leading" secondItem="7QG-lW-lNp" secondAttribute="leading" id="agX-Ue-asp"/>
                                             <constraint firstAttribute="bottom" secondItem="bKY-LK-gpA" secondAttribute="bottom" id="gz2-em-i0T"/>
                                             <constraint firstAttribute="trailing" secondItem="bKY-LK-gpA" secondAttribute="trailing" id="sHT-dv-1sC"/>
@@ -250,11 +297,13 @@
                 <outlet property="star7" destination="vgP-8S-vlo" id="E6O-Ok-A8a"/>
                 <outlet property="star8" destination="loa-gw-Jpb" id="cqT-p0-Nr9"/>
                 <outlet property="star9" destination="kEP-Na-9ay" id="4Gf-5B-geI"/>
+                <outlet property="viewFav" destination="aIp-hO-Ims" id="ikX-bc-DvH"/>
             </connections>
             <point key="canvasLocation" x="244.20289855072465" y="201.5625"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="favoriteOn" width="14" height="14"/>
         <image name="starOff" width="12" height="12"/>
     </resources>
 </document>

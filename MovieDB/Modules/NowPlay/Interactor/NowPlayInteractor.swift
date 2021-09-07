@@ -23,4 +23,8 @@ class NowPlayInteractor: NowPlayInteractorInteface {
             }
         }
     }
+    
+    func getFavorites() {
+        FAVORITE.sync()
+    }
 }

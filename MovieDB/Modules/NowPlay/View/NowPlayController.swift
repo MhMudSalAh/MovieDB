@@ -31,6 +31,7 @@ class NowPlayController: BaseController {
         setupNavigationTitle()
         initCollectionView()
         presenter.getNowPlaying(1)
+        presenter.getFavorites()
     }
     
     func setupNavigationTitle() {

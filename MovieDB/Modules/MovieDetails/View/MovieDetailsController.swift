@@ -12,19 +12,30 @@ class MovieDetailsController: BaseController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBack: UIButton!
-    
+    @IBOutlet weak var viewFav: UIView!
+    @IBOutlet weak var btnFav: UIButton!
+
     var presenter: MovieDetailsPresenterInterface!
     var page: Paginate = Paginate()
     
     var movie: Movie = Movie() {
         didSet {
-            tableView.reloadData()
+            reloadTableView()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func setupView() {
@@ -38,14 +49,39 @@ class MovieDetailsController: BaseController {
             btnBack.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+    func setupFav() {
+        if movie.favorite ?? true {
+            btnFav.setImage(UIImage(named: "favoriteOn"), for: .normal)
+            viewFav.backgroundColor = .white
+        } else {
+            viewFav.backgroundColor = .primary
+            btnFav.setImage(UIImage(named: "favoriteOff"), for: .normal)
+        }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: false)
+    func reverseFavoriteButton() {
+        DispatchQueue.main.async { [self] in
+            if !(movie.favorite ?? true) {
+                viewFav.backgroundColor = .white
+                btnFav.setImage(UIImage(named: "favoriteOn"), for: .normal)
+                movie.favorite = true
+            } else {
+                viewFav.backgroundColor = .primary
+                btnFav.setImage(UIImage(named: "favoriteOff"), for: .normal)
+                movie.favorite = false
+            }
+        }
+    }
+    
+    func reloadTableView() {
+        tableView.reloadData()
+        setupFav()
+    }
+
+    @IBAction func favouriteAction(_ sender: Any) {
+        presenter.didClickFavorite(movie)
+        reverseFavoriteButton()
     }
     
     @IBAction func actionBack(_ sender: Any) {

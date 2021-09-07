@@ -26,12 +26,14 @@ protocol NowPlayPresenterInterface: AnyObject {
     
     func getNowPlaying(_ page: Int)
     func didSelectMovie(_ movieId: Int)
+    func getFavorites()
 }
 
 protocol NowPlayInteractorInteface: AnyObject {
     var output: NowPlayInteractorOutput! { get set }
     
     func getNowPlaying(_ page: Int)
+    func getFavorites()
 }
 
 protocol NowPlayInteractorOutput: AnyObject {

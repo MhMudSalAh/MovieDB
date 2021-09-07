@@ -18,6 +18,14 @@ class MovieDetailsPresenter: MovieDetailsPresenterInterface {
         interactor.getMovie(movieId)
     }
     
+    func didClickFavorite(_ movie: Movie) {
+        if movie.favorite ?? true {
+            interactor.deleteFromFavourite(movie.id)
+        } else {
+            interactor.addToFavourite(movie)
+        }
+    }
+    
     func didClickToBack() {
         router.popViewController()
     }

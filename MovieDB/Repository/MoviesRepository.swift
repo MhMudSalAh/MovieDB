@@ -44,8 +44,9 @@ class MoviesRepository: Repo {
     func details(_ movieId: Int, _ completion: @escaping (Response<Movie>) -> ()) {
         provider.request(type: Movie.self, service: Api.Movies.details(movieId)) { response in
             switch response {
-            case let .success(page):
-                completion(.onSuccess(page))
+            case let .success(movie):
+                //movie = self.checkFavoriteMovie(movie)
+                completion(.onSuccess(self.checkFavoriteMovie(movie)))
             case let .failure(error):
                 completion(.onFailure(error))
             case .complete:
@@ -70,5 +71,17 @@ class MoviesRepository: Repo {
             }
         }
     }
+    
+    func checkFavoriteMovie(_ movie: Movie) -> Movie {
+        if !FAVORITE.favorites.isEmpty {
+            if let _ = FAVORITE.favorites.firstIndex(where: {$0.id == movie.id}) {
+                movie.favorite = true
+            } else {
+                movie.favorite = false
+            }
+        } else {
+            movie.favorite = false
+        }
+        return movie
+    }
 }
-

@@ -8,7 +8,7 @@
 import Foundation
 
 class MovieDetailsInteractor: MovieDetailsInteractorInteface {
-
+    
     var output: MovieDetailsInteractorOutput!
     
     func getMovie(_ movieId: Int) {
@@ -19,6 +19,28 @@ class MovieDetailsInteractor: MovieDetailsInteractorInteface {
             case let .onFailure(error):
                 self.output.didFailToGetMovie(error)
             case .onCompleted:
+                break
+            }
+        }
+    }
+    
+    func addToFavourite(_ movie: Movie) {
+        FAVORITE.add(movie) { response in
+            switch response {
+            case .onCompleted:
+                break
+            default:
+                break
+            }
+        }
+    }
+    
+    func deleteFromFavourite(_ movieId: Int) {
+        FAVORITE.delete(movieId) { response in
+            switch response {
+            case .onCompleted:
+                break
+            default:
                 break
             }
         }

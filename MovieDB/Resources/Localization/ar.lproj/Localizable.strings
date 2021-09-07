@@ -22,3 +22,6 @@
 "search_here" = "ابحث هنا...";
 "user_scrore" = "تقييم المستخدمين";
 "categories" = "الأقسام";
+"favorites" = "المفضلة";
+"empty_favorites_title" = "جمع الأفلام التي تحبها";
+"empty_favorites_description" = "حددالأفلام التي تفضلها لحفظها هنا";

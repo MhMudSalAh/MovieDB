@@ -22,3 +22,6 @@
 "search_here" = "Search Here...";
 "user_scrore" = "User Score";
 "categories" = "Categories";
+"favorites" = "Favorites";
+"empty_favorites_title" = "Collect the movies you love";
+"empty_favorites_description" = "Favorite the movies you love to save them here";

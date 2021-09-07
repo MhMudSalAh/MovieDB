@@ -18,9 +18,11 @@ class Movie: NSObject, Codable {
     var rateCount: Int? = 0
     var date: String? = ""
     var categories: [Category]? = []
-        
+    var favorite: Bool? = false
+    
     override init() {
         super.init()
+
     }
         
     func coverURL() -> String? {
@@ -58,6 +60,7 @@ extension Movie {
         case rateCount = "vote_count"
         case date = "release_date"
         case categories = "genres"
+        case favorite
     }
 }
 

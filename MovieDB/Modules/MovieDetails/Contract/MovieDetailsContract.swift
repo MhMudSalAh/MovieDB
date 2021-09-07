@@ -24,6 +24,7 @@ protocol MovieDetailsPresenterInterface: AnyObject {
     var router: MovieDetailsRouterInterface! { get set }
     
     func getMovie(_ movieId: Int)
+    func didClickFavorite(_ movie: Movie)
     func didClickToBack()
 }
 
@@ -31,6 +32,8 @@ protocol MovieDetailsInteractorInteface: AnyObject {
     var output: MovieDetailsInteractorOutput! { get set }
     
     func getMovie(_ movieId: Int)
+    func addToFavourite(_ movie: Movie)
+    func deleteFromFavourite(_ movieId: Int)
 }
 
 protocol MovieDetailsInteractorOutput: AnyObject {

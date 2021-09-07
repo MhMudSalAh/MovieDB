@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		0AAB850AC5963DD43CBA7E7D /* Pods_MovieDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 977769FE476752131F3EED6E /* Pods_MovieDBTests.framework */; };
 		30C0714689299432B340C38E /* Pods_MovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04325840A6A635A21428565 /* Pods_MovieDB.framework */; };
+		7A2EB5E726E704730005E4ED /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EB5E626E704730005E4ED /* FavoritesManager.swift */; };
+		7A2EB5E926E7064F0005E4ED /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EB5E826E7064F0005E4ED /* FavoritesRepository.swift */; };
+		7A2EB5EB26E7117B0005E4ED /* FavoritesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EB5EA26E7117B0005E4ED /* FavoritesContract.swift */; };
+		7A2EB5ED26E7118F0005E4ED /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EB5EC26E7118F0005E4ED /* FavoritesInteractor.swift */; };
+		7A2EB5EF26E7119F0005E4ED /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EB5EE26E7119F0005E4ED /* FavoritesPresenter.swift */; };
+		7A2EB5F126E711B30005E4ED /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EB5F026E711B30005E4ED /* FavoritesRouter.swift */; };
+		7A2EB5F326E711BF0005E4ED /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EB5F226E711BF0005E4ED /* FavoritesController.swift */; };
+		7A2EB5F526E711DB0005E4ED /* Favorites+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EB5F426E711DB0005E4ED /* Favorites+CollectionView.swift */; };
+		7A2EB5F726E711E50005E4ED /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2EB5F626E711E50005E4ED /* Favorites.storyboard */; };
+		7A2EB5FA26E72B7F0005E4ED /* Favorites+Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EB5F926E72B7F0005E4ED /* Favorites+Entity.swift */; };
 		7A518AB326E510B300AAC1DD /* MoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A518AB226E510B300AAC1DD /* MoviesRepository.swift */; };
 		7A518AB626E511F500AAC1DD /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A518AB526E511F500AAC1DD /* Movie.swift */; };
 		7A518ABA26E546D200AAC1DD /* NowPlaying+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A518AB926E546D200AAC1DD /* NowPlaying+CollectionView.swift */; };
@@ -205,6 +215,16 @@
 		526786D6B51BBCDDA324B5BC /* Pods-MovieDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDB.release.xcconfig"; path = "Target Support Files/Pods-MovieDB/Pods-MovieDB.release.xcconfig"; sourceTree = "<group>"; };
 		72DC60985EF0B67AEA49656D /* Pods_MovieDB_MovieDBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieDB_MovieDBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		773409ACD410CD7E51B9BA17 /* Pods-MovieDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDBTests.release.xcconfig"; path = "Target Support Files/Pods-MovieDBTests/Pods-MovieDBTests.release.xcconfig"; sourceTree = "<group>"; };
+		7A2EB5E626E704730005E4ED /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		7A2EB5E826E7064F0005E4ED /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
+		7A2EB5EA26E7117B0005E4ED /* FavoritesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesContract.swift; sourceTree = "<group>"; };
+		7A2EB5EC26E7118F0005E4ED /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
+		7A2EB5EE26E7119F0005E4ED /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		7A2EB5F026E711B30005E4ED /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
+		7A2EB5F226E711BF0005E4ED /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		7A2EB5F426E711DB0005E4ED /* Favorites+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+CollectionView.swift"; sourceTree = "<group>"; };
+		7A2EB5F626E711E50005E4ED /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		7A2EB5F926E72B7F0005E4ED /* Favorites+Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+Entity.swift"; sourceTree = "<group>"; };
 		7A518AB226E510B300AAC1DD /* MoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepository.swift; sourceTree = "<group>"; };
 		7A518AB526E511F500AAC1DD /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7A518AB926E546D200AAC1DD /* NowPlaying+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NowPlaying+CollectionView.swift"; sourceTree = "<group>"; };
@@ -439,6 +459,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		7A2EB5F826E72B600005E4ED /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7A2EB5F926E72B7F0005E4ED /* Favorites+Entity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		7A518AB426E511E700AAC1DD /* Movie */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				7ABC7FB626E4BB4600C5414D /* MovieDB.xcdatamodeld */,
+				7A2EB5E626E704730005E4ED /* FavoritesManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -1236,6 +1265,7 @@
 				7AB61AD926E4C3080004B2A2 /* UsersRepository.swift */,
 				7AB61ADA26E4C3080004B2A2 /* Repo.swift */,
 				7A518AB226E510B300AAC1DD /* MoviesRepository.swift */,
+				7A2EB5E826E7064F0005E4ED /* FavoritesRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1355,6 +1385,7 @@
 		7AB61AF626E4CCE80004B2A2 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				7A2EB5F826E72B600005E4ED /* Entity */,
 				7AB61AF726E4CCFA0004B2A2 /* Contract */,
 				7AB61AF926E4CCFA0004B2A2 /* Interactor */,
 				7AB61AF826E4CCFA0004B2A2 /* Presenter */,
@@ -1367,6 +1398,7 @@
 		7AB61AF726E4CCFA0004B2A2 /* Contract */ = {
 			isa = PBXGroup;
 			children = (
+				7A2EB5EA26E7117B0005E4ED /* FavoritesContract.swift */,
 			);
 			path = Contract;
 			sourceTree = "<group>";
@@ -1374,6 +1406,7 @@
 		7AB61AF826E4CCFA0004B2A2 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				7A2EB5EE26E7119F0005E4ED /* FavoritesPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1381,6 +1414,7 @@
 		7AB61AF926E4CCFA0004B2A2 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				7A2EB5EC26E7118F0005E4ED /* FavoritesInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -1388,6 +1422,7 @@
 		7AB61AFA26E4CCFA0004B2A2 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				7A2EB5F026E711B30005E4ED /* FavoritesRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -1395,6 +1430,9 @@
 		7AB61AFB26E4CCFA0004B2A2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7A2EB5F226E711BF0005E4ED /* FavoritesController.swift */,
+				7A2EB5F426E711DB0005E4ED /* Favorites+CollectionView.swift */,
+				7A2EB5F626E711E50005E4ED /* Favorites.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1742,6 +1780,7 @@
 				7ABC7FBD26E4BB4900C5414D /* LaunchScreen.storyboard in Resources */,
 				7A6793E026E6B937007A9BB8 /* MovieContentCell.xib in Resources */,
 				7AD03EFE26E6838E00D21A20 /* SliderCell.xib in Resources */,
+				7A2EB5F726E711E50005E4ED /* Favorites.storyboard in Resources */,
 				7AB61B1F26E4CF5B0004B2A2 /* TopRated.storyboard in Resources */,
 				7AB6199D26E4BF330004B2A2 /* PickerController.xib in Resources */,
 				7A6B234826E5C7060055D907 /* Search.storyboard in Resources */,
@@ -1900,6 +1939,7 @@
 				7AB61A9326E4C04A0004B2A2 /* APIResponse.swift in Sources */,
 				7AB61A9026E4C04A0004B2A2 /* Api.swift in Sources */,
 				7AB61AC626E4C16D0004B2A2 /* BaseRouter.swift in Sources */,
+				7A2EB5E926E7064F0005E4ED /* FavoritesRepository.swift in Sources */,
 				7AB619A326E4BF330004B2A2 /* EmptyScreenController.swift in Sources */,
 				7AB61AC426E4C16D0004B2A2 /* Base+Navigation.swift in Sources */,
 				7AB61B1526E4CF230004B2A2 /* TopRatedContract.swift in Sources */,
@@ -1908,6 +1948,7 @@
 				7AB619FF26E4BFE80004B2A2 /* CachingManager.swift in Sources */,
 				7A6B234C26E5C82F0055D907 /* Search+Pagination.swift in Sources */,
 				7A6B234226E5C6220055D907 /* SearchPresenter.swift in Sources */,
+				7A2EB5F326E711BF0005E4ED /* FavoritesController.swift in Sources */,
 				7AB61A8E26E4C04A0004B2A2 /* Fail.swift in Sources */,
 				7AB619C326E4BF340004B2A2 /* CALayer+Extension.swift in Sources */,
 				7AB619BC26E4BF340004B2A2 /* UINavigationBar+Extension.swift in Sources */,
@@ -1935,6 +1976,7 @@
 				7A518AC226E55EDE00AAC1DD /* NowPlaying+Pagination.swift in Sources */,
 				7A518ABA26E546D200AAC1DD /* NowPlaying+CollectionView.swift in Sources */,
 				7AB61A9226E4C04A0004B2A2 /* Response.swift in Sources */,
+				7A2EB5EB26E7117B0005E4ED /* FavoritesContract.swift in Sources */,
 				7AB619B826E4BF340004B2A2 /* UIDevice+Extension.swift in Sources */,
 				7AB619CA26E4BF340004B2A2 /* Data+String.swift in Sources */,
 				7AB619B226E4BF340004B2A2 /* UIView+Border.swift in Sources */,
@@ -1947,6 +1989,8 @@
 				7A6B233E26E5C3960055D907 /* SearchInteractor.swift in Sources */,
 				7A6B233A26E59BE00055D907 /* TopRated+Pagination.swift in Sources */,
 				7AB619B926E4BF340004B2A2 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				7A2EB5F126E711B30005E4ED /* FavoritesRouter.swift in Sources */,
+				7A2EB5ED26E7118F0005E4ED /* FavoritesInteractor.swift in Sources */,
 				7AB61B1926E4CF3A0004B2A2 /* TopRatedPresenter.swift in Sources */,
 				7A518AB626E511F500AAC1DD /* Movie.swift in Sources */,
 				7AB619B726E4BF340004B2A2 /* UITextView+Extension.swift in Sources */,
@@ -1966,6 +2010,7 @@
 				7A6B234426E5C6D80055D907 /* SearchRouter.swift in Sources */,
 				7AD03EEB26E6785400D21A20 /* MovieDetailsPresenter.swift in Sources */,
 				7AB61A8826E4C0490004B2A2 /* ServiceProtocol.swift in Sources */,
+				7A2EB5F526E711DB0005E4ED /* Favorites+CollectionView.swift in Sources */,
 				7A6B234A26E5C81A0055D907 /* Search+CollectionView.swift in Sources */,
 				7AB61B1B26E4CF440004B2A2 /* TopRatedRouter.swift in Sources */,
 				7AB619A126E4BF330004B2A2 /* RangeSlider.swift in Sources */,
@@ -1977,6 +2022,7 @@
 				7AB619A826E4BF340004B2A2 /* UIResponder+Extension.swift in Sources */,
 				7A518AB326E510B300AAC1DD /* MoviesRepository.swift in Sources */,
 				7A6B233C26E5C3180055D907 /* SearchContract.swift in Sources */,
+				7A2EB5EF26E7119F0005E4ED /* FavoritesPresenter.swift in Sources */,
 				7AB619A726E4BF330004B2A2 /* UILabel+Extension.swift in Sources */,
 				7AB619AD26E4BF340004B2A2 /* UIColor+Components.swift in Sources */,
 				7AB619CF26E4BF340004B2A2 /* String+SafelyLimit.swift in Sources */,
@@ -2004,6 +2050,7 @@
 				7AB619A626E4BF330004B2A2 /* UIImage+Extension.swift in Sources */,
 				7AB619AA26E4BF340004B2A2 /* LoadingButton.swift in Sources */,
 				7AB619E326E4BF6B0004B2A2 /* Validator.swift in Sources */,
+				7A2EB5E726E704730005E4ED /* FavoritesManager.swift in Sources */,
 				7AB61A8D26E4C04A0004B2A2 /* Converter.swift in Sources */,
 				7AB61B1726E4CF2F0004B2A2 /* TopRatedInteractor.swift in Sources */,
 				7AB619B526E4BF340004B2A2 /* UIView+GeometryExtension.swift in Sources */,
@@ -2028,6 +2075,7 @@
 				7AB61A5B26E4C0490004B2A2 /* URLSessionProtocol.swift in Sources */,
 				7AB619C226E4BF340004B2A2 /* CAShapeLayer+Extension.swift in Sources */,
 				7AB619FE26E4BFE80004B2A2 /* LocaleManager.swift in Sources */,
+				7A2EB5FA26E72B7F0005E4ED /* Favorites+Entity.swift in Sources */,
 				7AB619BE26E4BF340004B2A2 /* UINavigationController+Extension.swift in Sources */,
 				7AB61AE526E4C3080004B2A2 /* UsersRepository.swift in Sources */,
 				7AB619AF26E4BF340004B2A2 /* UIView+Extension.swift in Sources */,

@@ -49,8 +49,11 @@ class SearchController: BaseController {
     }
     
     func setupNavigationTitle() {
-        navigationItem.title = localizedText("search")
-        self.navigationItem.hidesSearchBarWhenScrolling = false
+        DispatchQueue.main.async { [self] in
+            navigationItem.title = localizedText("search")
+            self.navigationItem.hidesSearchBarWhenScrolling = false
+            searchController.definesPresentationContext = true
+        }
     }
             
     func reloadCollection() {

@@ -20,6 +20,10 @@ class NowPlayPresenter: NowPlayPresenterInterface {
         interactor.getNowPlaying(page)
     }
     
+    func getFavorites() {
+        interactor.getFavorites()
+    }
+
     func didSelectMovie(_ movieId: Int) {
         router.presentMovieDetails(movieId)
     }
