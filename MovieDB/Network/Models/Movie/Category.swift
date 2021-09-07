@@ -1,19 +1,23 @@
 //
-//  Geners.swift
+//  Category.swift
 //  MovieDB
 //
-//  Created by MhMuD SalAh on 05/09/2021.
+//  Created by MhMuD SalAh on 07/09/2021.
 //
 
 import UIKit
 
-struct Geners: Codable  {
+class Category: NSObject, Codable  {
     
     var id: Int = 0
     var title: String? = ""
+    
+    override init() {
+        super.init()
+    }
 }
 
-extension Geners {
+extension Category {
     
     enum CodingKeys: String, CodingKey {
         

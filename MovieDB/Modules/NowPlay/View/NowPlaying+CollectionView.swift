@@ -46,6 +46,6 @@ extension NowPlayController: UICollectionViewDelegate, SkeletonCollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        presenter.didSelectMovie(nowPlaying[indexPath.row].id)
     }
 }

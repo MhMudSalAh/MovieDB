@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movie Details Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailsController" id="Y6W-OH-hqX" customClass="MovieDetailsController" customModule="MovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wT6-Hz-pty">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcY-nn-9Ci">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xku-Ll-tTq">
+                                <rect key="frame" x="10" y="44" width="50" height="50"/>
+                                <subviews>
+                                    <view hidden="YES" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vp1-ba-One">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15x-zT-6x1">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="arrow-select">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.69999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.40000000000000002" height="0.40000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="32j-M6-4zn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="15x-zT-6x1" firstAttribute="top" secondItem="xku-Ll-tTq" secondAttribute="top" id="HQa-pP-ozd"/>
+                                    <constraint firstItem="vp1-ba-One" firstAttribute="leading" secondItem="xku-Ll-tTq" secondAttribute="leading" id="QOU-tA-kco"/>
+                                    <constraint firstAttribute="trailing" secondItem="15x-zT-6x1" secondAttribute="trailing" id="UbJ-hJ-BG7"/>
+                                    <constraint firstItem="vp1-ba-One" firstAttribute="top" secondItem="xku-Ll-tTq" secondAttribute="top" id="clp-3O-aK3"/>
+                                    <constraint firstAttribute="width" constant="50" id="h17-6K-Cu3"/>
+                                    <constraint firstAttribute="bottom" secondItem="15x-zT-6x1" secondAttribute="bottom" id="ku9-j6-lO5"/>
+                                    <constraint firstItem="15x-zT-6x1" firstAttribute="leading" secondItem="xku-Ll-tTq" secondAttribute="leading" id="pdc-78-6We"/>
+                                    <constraint firstAttribute="height" constant="50" id="ssI-Jt-AIv"/>
+                                    <constraint firstAttribute="bottom" secondItem="vp1-ba-One" secondAttribute="bottom" id="wAL-VV-aCD"/>
+                                    <constraint firstAttribute="trailing" secondItem="vp1-ba-One" secondAttribute="trailing" id="zzW-qT-pW6"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.5" height="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nPc-mC-GAA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HcY-nn-9Ci" firstAttribute="top" secondItem="wT6-Hz-pty" secondAttribute="top" id="329-Nj-urk"/>
+                            <constraint firstItem="HcY-nn-9Ci" firstAttribute="trailing" secondItem="nPc-mC-GAA" secondAttribute="trailing" id="Fdk-FP-9UL"/>
+                            <constraint firstItem="xku-Ll-tTq" firstAttribute="top" secondItem="nPc-mC-GAA" secondAttribute="top" id="LAg-RJ-iiz"/>
+                            <constraint firstItem="HcY-nn-9Ci" firstAttribute="leading" secondItem="nPc-mC-GAA" secondAttribute="leading" id="MJM-ve-QeQ"/>
+                            <constraint firstItem="xku-Ll-tTq" firstAttribute="leading" secondItem="nPc-mC-GAA" secondAttribute="leading" constant="10" id="icw-Ht-2Ym"/>
+                            <constraint firstItem="HcY-nn-9Ci" firstAttribute="bottom" secondItem="wT6-Hz-pty" secondAttribute="bottom" id="whP-xb-wTI"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="btnBack" destination="15x-zT-6x1" id="Qjc-CJ-FUp"/>
+                        <outlet property="tableView" destination="HcY-nn-9Ci" id="P0J-ei-WpC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow-select" width="76" height="76"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

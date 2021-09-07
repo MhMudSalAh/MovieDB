@@ -7,7 +7,7 @@
 
 import UIKit
 
-let MOVIES = MoviesRepository.shared
+let MOVIE = MoviesRepository.shared
 
 class MoviesRepository: Repo {
     

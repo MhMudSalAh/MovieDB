@@ -18,7 +18,11 @@ class SearchPresenter: SearchPresenterInterface {
             view?.showLoading()
         }
         interactor.doSearch(page, text)
-    }    
+    }
+    
+    func didSelectMovie(_ movieId: Int) {
+        router.presentMovieDetails(movieId)
+    }
 }
     
 extension SearchPresenter: SearchInteractorOutput {

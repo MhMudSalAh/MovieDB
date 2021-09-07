@@ -20,3 +20,5 @@
 "empty_search_title" = "No movies found!";
 "empty_search_description" = "Try searching again...";
 "search_here" = "Search Here...";
+"user_scrore" = "User Score";
+"categories" = "Categories";

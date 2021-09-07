@@ -19,6 +19,10 @@ class NowPlayPresenter: NowPlayPresenterInterface {
         }
         interactor.getNowPlaying(page)
     }
+    
+    func didSelectMovie(_ movieId: Int) {
+        router.presentMovieDetails(movieId)
+    }
 }
 
 extension NowPlayPresenter: NowPlayInteractorOutput {

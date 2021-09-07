@@ -181,7 +181,6 @@
                                                     </stackView>
                                                 </subviews>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
                                                         <real key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
@@ -202,12 +201,6 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="heightClass=regular-widthClass=regular" distribution="fill"/>
                             </stackView>
                         </subviews>

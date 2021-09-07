@@ -46,6 +46,6 @@ extension SearchController: UICollectionViewDelegate, SkeletonCollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        presenter.didSelectMovie(movies[indexPath.row].id)
     }
 }

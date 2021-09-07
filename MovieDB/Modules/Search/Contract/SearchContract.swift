@@ -29,6 +29,7 @@ protocol SearchPresenterInterface: AnyObject {
     var interactor: SearchInteractorInterface! { get set }
     
     func doSearch(_ page: Int, _ text: String)
+    func didSelectMovie(_ movieId: Int)
 }
 
 protocol SearchInteractorInterface: AnyObject {
@@ -46,5 +47,7 @@ protocol SearchInteractorOutput: AnyObject {
 protocol SearchRouterInterface: AnyObject {
     var viewController: UIViewController? { get set }
         
+    func presentMovieDetails(_ movieId: Int)
+    
     static func assembleModule() -> UIViewController
 }

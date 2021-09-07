@@ -25,6 +25,7 @@ protocol NowPlayPresenterInterface: AnyObject {
     var router: NowPlayRouterInterface! { get set }
     
     func getNowPlaying(_ page: Int)
+    func didSelectMovie(_ movieId: Int)
 }
 
 protocol NowPlayInteractorInteface: AnyObject {
@@ -40,8 +41,9 @@ protocol NowPlayInteractorOutput: AnyObject {
 }
 
 protocol NowPlayRouterInterface: AnyObject {
-    
     var viewController: UIViewController? { get set }
-        
+    
+    func presentMovieDetails(_ movieId: Int)
+    
     static func assembleModule() -> UIViewController
 }
