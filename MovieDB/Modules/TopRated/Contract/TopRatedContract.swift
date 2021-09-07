@@ -26,6 +26,7 @@ protocol TopRatedPresenterInterface: AnyObject {
     var router: TopRatedRouterInterface! { get set }
     
     func getTopRated(_ page: Int)
+    func didSelectMovie(_ movieId: Int)
 }
 
 protocol TopRatedInteractorInteface: AnyObject {
@@ -41,8 +42,9 @@ protocol TopRatedInteractorOutput: AnyObject {
 }
 
 protocol TopRatedRouterInterface: AnyObject {
-    
     var viewController: UIViewController? { get set }
         
+    func presentMovieDetails(_ movieId: Int)
+    
     static func assembleModule() -> UIViewController
 }

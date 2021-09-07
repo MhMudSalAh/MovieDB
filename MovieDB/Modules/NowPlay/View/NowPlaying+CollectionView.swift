@@ -41,11 +41,11 @@ extension NowPlayController: UICollectionViewDelegate, SkeletonCollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeue(cellClass: MovieCell.self, indexPath: indexPath)
         cell.hideSkeleton()
-        cell.setupCell(nowPlaying[indexPath.row])
+        cell.setupCell(nowPlaying[indexPath.row], nil)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        presenter.didSelectMovie(nowPlaying[indexPath.row].id)
     }
 }

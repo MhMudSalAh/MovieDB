@@ -41,11 +41,11 @@ extension SearchController: UICollectionViewDelegate, SkeletonCollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeue(cellClass: MovieCell.self, indexPath: indexPath)
         cell.hideSkeleton()
-        cell.setupCell(movies[indexPath.row])
+        cell.setupCell(movies[indexPath.row], nil)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        presenter.didSelectMovie(movies[indexPath.row].id)
     }
 }

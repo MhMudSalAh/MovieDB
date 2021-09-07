@@ -15,14 +15,16 @@ class Movie: NSObject, Codable {
     var cover: String? = ""
     var image: String? = ""
     var rate: Double? = 0
-    var rateCount: Double? = 0
+    var rateCount: Int? = 0
     var date: String? = ""
-    var geners: [Geners]? = []
+    var categories: [Category]? = []
+    var favorite: Bool? = false
     
     override init() {
         super.init()
+
     }
-    
+        
     func coverURL() -> String? {
         if let cover = cover { return API.getImagePath(cover) }
         return nil
@@ -32,6 +34,17 @@ class Movie: NSObject, Codable {
         if let image = image { return API.getImagePath(image) }
         return nil
     }
+    
+    func getImages() -> [String] {
+        var images = [String]()
+        if let image = imageURL() {
+            images.append(image)
+        }
+        if let cover = coverURL() {
+            images.append(cover)
+        }
+        return images
+    }
 }
 
 extension Movie {
@@ -39,14 +52,15 @@ extension Movie {
     enum CodingKeys: String, CodingKey {
         
         case id
-        case title = "original_title"
+        case title
         case desc = "overview"
         case cover = "backdrop_path"
         case image = "poster_path"
         case rate = "vote_average"
         case rateCount = "vote_count"
         case date = "release_date"
-        case geners
+        case categories = "genres"
+        case favorite
     }
 }
 

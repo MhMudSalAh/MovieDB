@@ -32,7 +32,7 @@
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vbq-Ww-2bl">
                                     <rect key="frame" x="97" y="2" width="160" height="160"/>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Vbq-Ww-2bl" secondAttribute="height" multiplier="1:1" id="NFH-z6-Yil"/>
                                         <constraint firstAttribute="height" constant="160" id="rvB-97-Ltq"/>

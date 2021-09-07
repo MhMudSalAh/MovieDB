@@ -11,6 +11,7 @@ class MovieCell: UICollectionViewCell {
     
     
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var viewFav: UIView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblRate: UILabel!
     @IBOutlet weak var star1: UIImageView!
@@ -24,9 +25,13 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var star9: UIImageView!
     @IBOutlet weak var star10: UIImageView!
     
+    var delegate: FavoritesDelegate?
     var stars: [UIImageView] = []
+    var movie: Movie?
     
-    func setupCell(_ movie: Movie) {
+    func setupCell(_ movie: Movie, _ delegate: FavoritesDelegate?) {
+        self.delegate = delegate
+        self.movie = movie
         img.loadImage(movie.imageURL())
         lblTitle.text = movie.title
         lblRate.text = "\(movie.rate?.rounded(places: 1) ?? 0.0)"
@@ -38,6 +43,12 @@ class MovieCell: UICollectionViewCell {
         for star in stars {
             star.image = index < Int(rating) ? UIImage(named: "starOn") : UIImage(named: "starOff")
             index += 1
+        }
+    }
+    
+    @IBAction func actionFavorite(_ sender: Any) {
+        if let movieId = movie?.id {
+            delegate?.didClickDeleteFavorite(movieId)
         }
     }
     

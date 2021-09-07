@@ -16,6 +16,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     var icon1 = UITabBarItem()
     var icon2 = UITabBarItem()
     var icon3 = UITabBarItem()
+    var icon4 = UITabBarItem()
     
     struct Static {
         static var instance: TabBarController?
@@ -79,16 +80,19 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let item1 = NowPlayRouter.assembleModule()
         let item2 = TopRatedRouter.assembleModule()
         let item3 = SearchRouter.assembleModule()
+        let item4 = FavoritesRouter.assembleModule()
         
         icon1 = UITabBarItem(title: localizedText("now-playing"), image: UIImage(named: "tab-now-play"), selectedImage: UIImage(named: "tab-now-play"))
         icon2 = UITabBarItem(title: localizedText("top-rated"), image: UIImage(named: "tab-top-rate"), selectedImage: UIImage(named: "tab-top-rate"))
         icon3 = UITabBarItem(title: localizedText("search"), image: UIImage(named: "tab-search"), selectedImage: UIImage(named: "tab-search"))
+        icon4 = UITabBarItem(title: localizedText("favorites"), image: UIImage(named: "tab-favorite"), selectedImage: UIImage(named: "tab-favorite"))
         
         item1.tabBarItem = icon1
         item2.tabBarItem = icon2
         item3.tabBarItem = icon3
+        item4.tabBarItem = icon4
         
-        let controllers = [item1, item2, item3]
+        let controllers = [item1, item2, item3, item4]
         self.viewControllers = controllers
     }
 }

@@ -30,9 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     fileprivate func setupThirdPartServices() {
-        // MARK: TODO: Fabric.with([Crashlytics.self])
-        // MARK: TODO: FirebaseApp.configure()
-        
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: AppFontName.light, size: 12)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)
