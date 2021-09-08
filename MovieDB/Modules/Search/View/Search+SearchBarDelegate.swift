@@ -48,4 +48,10 @@ extension SearchController: UISearchBarDelegate {
             searchController.isActive = false
         }
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if !movies.isEmpty {
+            movies.removeAll()
+        }
+    }
 }
