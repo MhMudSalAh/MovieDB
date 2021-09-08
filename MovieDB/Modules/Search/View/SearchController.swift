@@ -14,7 +14,7 @@ class SearchController: BaseController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
-
+    
     var presenter: SearchPresenterInterface!
     
     var page: Paginate = Paginate()
@@ -57,11 +57,10 @@ class SearchController: BaseController {
     }
     
     func setupNavigation() {
-        DispatchQueue.main.async { [self] in
-            navigationItem.title = localizedText("search")
-            self.navigationItem.hidesSearchBarWhenScrolling = false
-            searchController.definesPresentationContext = true
-        }
+        navigationItem.title = localizedText("search")
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.definesPresentationContext = true
+        extendedLayoutIncludesOpaqueBars = true
     }
     
     func reloadCollection() {

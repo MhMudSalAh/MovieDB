@@ -9,7 +9,6 @@ import UIKit
 
 let FAVORITE = FavoritesRepository.shared
 
-
 class FavoritesRepository: Repo {
     
     static let shared = FavoritesRepository()

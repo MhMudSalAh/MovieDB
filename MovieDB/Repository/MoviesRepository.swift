@@ -45,7 +45,6 @@ class MoviesRepository: Repo {
         provider.request(type: Movie.self, service: Api.Movies.details(movieId)) { response in
             switch response {
             case let .success(movie):
-                //movie = self.checkFavoriteMovie(movie)
                 completion(.onSuccess(self.checkFavoriteMovie(movie)))
             case let .failure(error):
                 completion(.onFailure(error))
