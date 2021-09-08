@@ -38,7 +38,7 @@ extension SearchController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            presentSeacrhScreen()
+            presentEmptyScreen()
             movies.removeAll()
         }
     }

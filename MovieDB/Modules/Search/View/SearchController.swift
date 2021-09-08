@@ -10,10 +10,7 @@ import SkeletonView
 
 class SearchController: BaseController {
     
-    @IBOutlet weak var viewSearch: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblDescription: UILabel!
     
     var presenter: SearchPresenterInterface!
     
@@ -52,27 +49,22 @@ class SearchController: BaseController {
     func setupView() {
         setupNavigation()
         setupSearhController()
+        presentEmptyScreen()
         initCollectionView()
-        presentSeacrhScreen()
     }
     
     func setupNavigation() {
         navigationItem.title = localizedText("search")
-        self.navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.hidesSearchBarWhenScrolling = false
         searchController.definesPresentationContext = true
         extendedLayoutIncludesOpaqueBars = true
     }
     
     func reloadCollection() {
         DispatchQueue.main.async { [self] in
-            if movies.isEmpty && (searchController.searchBar.text?.isEmpty ?? true) {
-                presentSeacrhScreen()
-            } else if movies.isEmpty && !(searchController.searchBar.text?.isEmpty ?? true) {
+            hideSeacrhScreen()
+            if movies.isEmpty {
                 presentEmptyScreen()
-            } else {
-                if !movies.isEmpty {
-                    hideSeacrhScreen()
-                }
             }
             collectionView.reloadData()
         }
@@ -101,21 +93,12 @@ extension SearchController: SearchView {
         closeNetworkErrorScreen()
     }
     
-    func presentSeacrhScreen() {
-        viewSearch.isHidden = false
-        lblTitle.text = localizedText("search_title")
-        lblDescription.isHidden = true
+    func presentEmptyScreen() {
+        showEmptyScreen((searchController.searchBar.text?.isEmpty ?? false) ? .search : .searchEmpty, self, view)
     }
     
     func hideSeacrhScreen() {
-        viewSearch.isHidden = true
-    }
-    
-    func presentEmptyScreen() {
-        viewSearch.isHidden = false
-        lblDescription.isHidden = false
-        lblTitle.text = localizedText("empty_search_title")
-        lblDescription.text = localizedText("empty_search_description")
+        closeEmptyScreen()
     }
 }
 

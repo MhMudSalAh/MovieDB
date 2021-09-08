@@ -15,9 +15,8 @@ protocol SearchView: AnyObject {
     func showLoading()
     func hideLoading()
     
-    func presentSeacrhScreen()
-    func hideSeacrhScreen()
     func presentEmptyScreen()
+    func hideSeacrhScreen()
     
     func presentNetworkErrorScreen()
     func hideNetworkErrorScreen()

@@ -32,6 +32,10 @@ class EmptyScreenController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         setupView()
     }
     
@@ -55,18 +59,18 @@ class EmptyScreenController: UIViewController {
     }
     
     func showAsSubView(_ view: UIView) {
-        isPresented = true
         DispatchQueue.main.async {
             self.view.frame = view.frame
             view.addSubview(self.view)
         }
+        isPresented = true
     }
     
     func close() {
-        isPresented = false
         DispatchQueue.main.async {
             self.view.removeFromSuperview()
         }
+        isPresented = false
     }
     
     @IBAction func btnEmptyScreenAction(_ sender: Any) {
